@@ -9,6 +9,8 @@ translateButton.addEventListener('click', function () {
 
     if(language === "en" ){
 
+        if (isEnglish(inputText)) {
+
     fetch(`https://api.mymemory.translated.net/get?q=${inputText}&langpair=en|ar`)
     .then(response => response.json())
     .then(data => {
@@ -42,10 +44,24 @@ translateButton.addEventListener('click', function () {
 
 
     });
+}
+
+else {
+    const container = document.querySelector(".container");
+
+    const containerItem = document.createElement("label");
+    containerItem.textContent = "InVaild Text, please rewrite English Text";
+    containerItem.style.color = "red";
+
+    container.appendChild(containerItem);
+
+}
     
 
     }
     else if(language === "ar" ){
+
+        if (isArabic(inputText)) {
 
         fetch(`https://api.mymemory.translated.net/get?q=${inputText}&langpair=ar|en`)
         .then(response => response.json())
@@ -79,6 +95,18 @@ translateButton.addEventListener('click', function () {
     
         });
     }
+
+    else {
+        const container = document.querySelector(".container");
+    
+        const containerItem = document.createElement("label");
+        containerItem.textContent = "InVaild Text, please rewrite Arabic Text";
+        containerItem.style.color = "red";
+    
+        container.appendChild(containerItem);
+    
+    }
+    }
     
 });
 
@@ -87,3 +115,13 @@ const inputText = document.getElementById('inputText');
 inputText.addEventListener('click', function () {
     translationResult.textContent = "";
 });
+
+function isEnglish(text) {
+    var englishRegex = /^[A-Za-z\s\.,'"!?]+$/;
+    return englishRegex.test(text);
+}
+
+function isArabic(text) {
+    var arabicRegex = /^[\u0600-\u06FF\s\.,'"!?]+$/;
+    return arabicRegex.test(text);
+}
