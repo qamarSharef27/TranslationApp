@@ -13,6 +13,14 @@ The project is implemented with HTML, CSS, and JavaScript. The HTML file (`index
 4. A responsive design that looks good on desktop and mobile devices.
 5. Input Text Validation to ensure it matches the selected language.
 
+**Arabic Language Validation**
+
+![Translation App Validation photo](./images/TranslationApp1.png)
+
+**English Language Validation**
+
+![Translation App Validation photo](./images/TranslationApp2.png)
+
 
 you should be familiar with the following **_technologies_**:
 1. HTML
