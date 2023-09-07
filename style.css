@@ -16,6 +16,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+.text {
+    color: red;
+}
 
 .translator {
     background-color: #aa69c0; 
