@@ -2,17 +2,22 @@ translateButton = document.getElementById('translateButton');
 
 const ApiKey = "MgoYCzt6WVJHr5yxFWcus5vEzyJMMsXK";
 
+const translateAndDisplay = (inputText, language) => {
 
-translateButton.addEventListener('click', () => {
+    let src;
+    let des;
 
-    const language = document.getElementById('language').value;
-    const inputText = document.getElementById('inputText').value;
+    if (language === "en"){
+        src = "en";
+        des = "ar";
 
-    if(language === "en" ){
+    }
+    else if (language === "ar"){
+        src = "ar";
+        des = "en";
+    }
 
-        if (isEnglish(inputText)) {
-
-    fetch(`https://api.mymemory.translated.net/get?q=${inputText}&langpair=en|ar`)
+    fetch(`https://api.mymemory.translated.net/get?q=${inputText}&langpair=${src}|${des}`)
     .then(response => response.json())
     .then(data => {
         const translationResult = document.getElementById('translationResult');
@@ -25,7 +30,6 @@ translateButton.addEventListener('click', () => {
     
         translationResult.appendChild(textWrapper);
         translationResult.appendChild(document.createElement('br'));
-
 
         fetch(`http://api.giphy.com/v1/gifs/search?q=${data.responseData.translatedText}&api_key=${ApiKey}&limit=8`)
         .then(response => response.json())
@@ -65,6 +69,21 @@ translateButton.addEventListener('click', () => {
     });
 }
 
+
+translateButton.addEventListener('click', () => {
+
+    const language = document.getElementById('language').value;
+    const inputText = document.getElementById('inputText').value;
+
+    if(language === "en" ){
+
+        if (isEnglish(inputText)) {
+
+            translateAndDisplay(inputText, language);
+       
+    }
+    
+
 else {
     const container = document.querySelector(".container");
 
@@ -76,42 +95,13 @@ else {
 
 }
     
-
-    }
+}
     else if(language === "ar" ){
 
         if (isArabic(inputText)) {
 
-        fetch(`https://api.mymemory.translated.net/get?q=${inputText}&langpair=ar|en`)
-        .then(response => response.json())
-        .then(data => {
-            const translationResult = document.getElementById('translationResult');
-            const translatedText = data.responseData.translatedText;
-        
-            const textWrapper = document.createElement('span');
-            textWrapper.textContent = translatedText;
-        
-            textWrapper.classList.add('translation-text');
-        
-            translationResult.appendChild(textWrapper);
-            translationResult.appendChild(document.createElement('br'));
+            translateAndDisplay(inputText, language);
 
-            fetch(`http://api.giphy.com/v1/gifs/search?q=${data.responseData.translatedText}&api_key=${ApiKey}&limit=8`)
-            .then(response => response.json())
-            .then(({ data: list })=> {
-
-                    list.forEach(element => {
-                    let img = new Image();
-                    img.src = element.images.original.url;
-                    img.classList.add('image');
-
-                    translationResult.appendChild(img); 
-    
-                });
-                
-            });
-    
-        });
     }
 
     else {
