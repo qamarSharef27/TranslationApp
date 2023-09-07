@@ -1,6 +1,6 @@
 translateButton = document.getElementById('translateButton');
 
-const ApiKey = "RNwST3qn9qWp4RUu51vBjrUdk3FAcywH";
+const ApiKey = "MgoYCzt6WVJHr5yxFWcus5vEzyJMMsXK";
 
 translateButton.addEventListener('click', function () {
 
@@ -77,7 +77,7 @@ else {
             translationResult.appendChild(textWrapper);
             translationResult.appendChild(document.createElement('br'));
 
-            fetch(`http://api.giphy.com/v1/gifs/search?q=${data.responseData.translatedText}&api_key=${ApiKey}&limit=5`)
+            fetch(`http://api.giphy.com/v1/gifs/search?q=${data.responseData.translatedText}&api_key=${ApiKey}&limit=8`)
             .then(response => response.json())
             .then(({ data: list })=> {
 
