@@ -3,6 +3,11 @@ Welcome to the Translator App Project, this is a simple Translator app using API
 
 ![Translation App photo](./images/TranslationApp.png)
 
+![Translation App photo](./images/TranslationApp3.png)
+
+![Translation App photo](./images/TranslationApp4.png)
+
+
 ---
 ## Description 
 The project is implemented with HTML, CSS, and JavaScript. The HTML file (`index.html`) sets up the structure of the Translator app, the CSS file (`style.css`) provides styling to the structure, and the JavaScript file (`main.js`) implements the app's functionality that ensures a comprehensive and user-friendly experience such as: 

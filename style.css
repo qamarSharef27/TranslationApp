@@ -1,3 +1,10 @@
+html{
+    width: 100%;
+    height: 100%;
+    padding: 0%;
+    margin: 0%;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(45deg, #2632a3, #ae1bdf); 
@@ -8,6 +15,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.text {
+    color: red;
 }
 
 .translator {
@@ -47,6 +57,12 @@ input[type="text"], .translation-box {
 .translation-box {
     min-height:250px;
 }
+
+.image{
+    width: 80px;
+    height: 80px;
+}
+
 
 .translation-text {
     font-size: 22px; 
