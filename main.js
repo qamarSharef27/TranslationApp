@@ -27,7 +27,7 @@ translateButton.addEventListener('click', function () {
         translationResult.appendChild(document.createElement('br'));
 
 
-        fetch(`https://api.giphy.com/v1/gifs/search?q=${data.responseData.translatedText}&api_key=${ApiKey}&limit=8`)
+        fetch(`http://api.giphy.com/v1/gifs/search?q=${data.responseData.translatedText}&api_key=${ApiKey}&limit=8`)
         .then(response => response.json())
         .then(({ data: list })=> {
 
