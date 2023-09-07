@@ -85,9 +85,8 @@ else {
                     list.forEach(element => {
                     let img = new Image();
                     img.src = element.images.original.url;
-                    img.style.width = '80px'; 
-                    img.style.height = '80px';        
-            
+                    img.classList.add('image');
+
                     translationResult.appendChild(img); 
     
                 });
