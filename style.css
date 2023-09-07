@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #2632a3, #ae1bdf); 
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.translator {
+    background-color: #aa69c0; 
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    margin: 20px; 
+    position: relative;
+
+}
+
+h1 {
+    color: #2c2828; 
+    font-style:italic;
+}
+
+select, input[type="text"], .translation-box {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #333; 
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff; 
+    color: #333; 
+    box-sizing: border-box; 
+}
+
+input[type="text"], .translation-box {
+    width: 100%; 
+}
+
+
+.translation-box {
+    min-height:250px;
+}
+
+.translation-text {
+    font-size: 22px; 
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.pic {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    border: 8px solid #aa69c0 ;
+    background: linear-gradient(45deg, #2632a3, #ae1bdf); 
+    transform: translate(-50%, -50%);
+}
+
+img {
+    width:45px;
+    height: 45px;
+    margin-top: 20px;
+}
+
+button {
+    background-color: transparent; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    animation: pulseAnimation 1.5s ease-in-out infinite; 
+    background-image: linear-gradient(45deg, #2632a3, #ae1bdf); 
+    background-size: 200% 100%; 
+    background-position: 100% 0; 
+    transition: background 0.3s ease-in-out; 
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.7);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ae1bdf, #2632a3); 
+    animation: none;
+}
+
+@keyframes pulseAnimation {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); 
+    }
+}
+
+@media (min-width: 768px) {
+    .translator {
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .translator {
+        width: 95%;
+    }
+}
