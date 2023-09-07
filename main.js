@@ -12,7 +12,7 @@ translateButton.addEventListener('click', function () {
 
         if (isEnglish(inputText)) {
 
-    fetch(`http://api.mymemory.translated.net/get?q=${inputText}&langpair=en|ar`)
+    fetch(`https://api.mymemory.translated.net/get?q=${inputText}&langpair=en|ar`)
     .then(response => response.json())
     .then(data => {
         const translationResult = document.getElementById('translationResult');
