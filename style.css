@@ -55,6 +55,12 @@ input[type="text"], .translation-box {
     min-height:250px;
 }
 
+.image{
+    width: 80px;
+    height: 80px;
+}
+
+
 .translation-text {
     font-size: 22px; 
     border-radius: 8px;
