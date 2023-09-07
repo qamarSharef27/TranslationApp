@@ -41,9 +41,27 @@ translateButton.addEventListener('click', () => {
             translationResult.appendChild(img); 
 
         });
+    })
+    .catch(error => {
+
+        const textWrapper = document.createElement('span');
+        textWrapper.textContent = error;
+
+        textWrapper.classList.add('text');
+        
+        translationResult.appendChild(textWrapper);
+        translationResult.appendChild(document.createElement('br'));
+
     });
 
+    }) .catch(error => {
+        const textWrapper = document.createElement('span');
+        textWrapper.textContent = error;
 
+        textWrapper.classList.add('text');
+        
+        translationResult.appendChild(textWrapper);
+        translationResult.appendChild(document.createElement('br'));
     });
 }
 
