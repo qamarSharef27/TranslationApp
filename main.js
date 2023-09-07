@@ -114,6 +114,9 @@ const inputText = document.getElementById('inputText');
 
 inputText.addEventListener('click', function () {
     translationResult.textContent = "";
+    const container = document.querySelector(".container");
+    const label = container.querySelector("label");   
+    label.textContent = ""; 
 });
 
 function isEnglish(text) {
