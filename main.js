@@ -70,7 +70,7 @@ else {
 
     const containerItem = document.createElement("label");
     containerItem.textContent = "InVaild Text, please rewrite English Text";
-    containerItem.style.color = "red";
+    containerItem.classList.add('text');
 
     container.appendChild(containerItem);
 
@@ -119,7 +119,7 @@ else {
     
         const containerItem = document.createElement("label");
         containerItem.textContent = "InVaild Text, please rewrite Arabic Text";
-        containerItem.style.color = "red";
+        containerItem.classList.add('text');
     
         container.appendChild(containerItem);
     
