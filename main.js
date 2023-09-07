@@ -3,7 +3,7 @@ translateButton = document.getElementById('translateButton');
 const ApiKey = "MgoYCzt6WVJHr5yxFWcus5vEzyJMMsXK";
 
 
-translateButton.addEventListener('click', function () {
+translateButton.addEventListener('click', () => {
 
     const language = document.getElementById('language').value;
     const inputText = document.getElementById('inputText').value;
